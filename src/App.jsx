@@ -44,7 +44,10 @@ function App() {
 
       {/* Public Routes */}
       <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={isAuthenticated ? <Home /> : <Navigate to="/login" replace />}
+        />
         <Route path="/test-connection" element={<TestConnection />} />
         <Route path="/properties" element={<Colonies />} />
         <Route path="/properties/:id" element={<PropertyDetails />} />
