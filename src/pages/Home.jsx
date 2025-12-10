@@ -178,14 +178,14 @@ const Home = () => {
 
 
       {/* Debug Info Section */}
-      <Box sx={{ bgcolor: '#f0f0f0', px: 2, py: 1, borderBottom: '1px solid #ddd' }}>
+      {/* <Box sx={{ bgcolor: '#f0f0f0', px: 2, py: 1, borderBottom: '1px solid #ddd' }}>
         <Typography variant="caption" sx={{ color: '#666' }}>
           Debug: {propertiesArray.length} properties loaded | Auth: {isAuthenticated ? '✅' : '❌'} | 
           <Button size="small" onClick={handleRefreshData} sx={{ ml: 1, minWidth: 'auto', p: 0.5 }}>
             🔄 Refresh
           </Button>
         </Typography>
-      </Box>
+      </Box> */}
 
       {/* All Properties Section */}
       <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
@@ -194,7 +194,7 @@ const Home = () => {
             All Properties ({propertiesArray.length})
           </Typography>
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <Button
+            {/* <Button
               onClick={() => navigate('/test-connection')}
               variant="outlined"
               size="small"
@@ -207,7 +207,7 @@ const Home = () => {
               }}
             >
               Test API
-            </Button>
+            </Button> */}
             <Button
               onClick={() => navigate('/colonies')}
               sx={{ 
