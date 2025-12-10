@@ -1,7 +1,7 @@
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://jayshri-app.netlify.app/api/v1'
+const API_URL = import.meta.env.VITE_API_URL || 'https://jayshri-bk.vercel.app/api/v1'
 
 const axiosInstance = axios.create({
   baseURL: API_URL,
