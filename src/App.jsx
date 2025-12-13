@@ -28,6 +28,7 @@ import Favorites from './pages/Favorites'
 import Compare from './pages/Compare'
 import Contact from './pages/Contact'
 import Settings from './pages/Settings'
+import AgentDashboard from './pages/AgentDashboard'
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.auth)
@@ -68,6 +69,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/referral" element={<Referral />} />
           <Route path="/notifications" element={<Notifications />} />
+          <Route path="/agent/dashboard" element={<AgentDashboard />} />
         </Route>
       ) : null}
 

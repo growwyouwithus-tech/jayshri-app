@@ -17,7 +17,7 @@ import {
   DialogContent,
   DialogActions,
 } from '@mui/material'
-import { AccountCircle, Edit, Save, ChevronRight, Language, Lock, Info, Logout as LogoutIcon } from '@mui/icons-material'
+import { AccountCircle, Edit, Save, ChevronRight, Language, Lock, Info, Logout as LogoutIcon, Dashboard } from '@mui/icons-material'
 import { List, ListItem, ListItemIcon, ListItemText, ListItemButton } from '@mui/material'
 import { logout } from '../store/slices/authSlice'
 import toast from 'react-hot-toast'
@@ -85,6 +85,27 @@ const Profile = () => {
       <Container maxWidth="md" sx={{ py: 3, px: 2 }}>
         <Card sx={{ borderRadius: 3, overflow: 'hidden' }}>
           <List sx={{ p: 0 }}>
+            {/* Show Dashboard button only for Agent role */}
+            {user?.role === 'Agent' && (
+              <>
+                <ListItemButton sx={{ py: 2 }} onClick={() => navigate('/agent/dashboard')}>
+                  <ListItemIcon sx={{ minWidth: 48 }}>
+                    <Box sx={{ bgcolor: '#C5E1A5', borderRadius: '50%', width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Dashboard sx={{ color: '#689F38', fontSize: 24 }} />
+                    </Box>
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary="My Dashboard" 
+                    primaryTypographyProps={{ fontWeight: 500, fontSize: '1rem' }}
+                    secondary="View bookings & commission"
+                    secondaryTypographyProps={{ fontSize: '0.75rem' }}
+                  />
+                  <ChevronRight sx={{ color: '#999' }} />
+                </ListItemButton>
+                <Divider sx={{ mx: 2 }} />
+              </>
+            )}
+
             <ListItemButton sx={{ py: 2 }} onClick={handleEditProfile}>
               <ListItemIcon sx={{ minWidth: 48 }}>
                 <Box sx={{ bgcolor: '#E1BEE7', borderRadius: '50%', width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
